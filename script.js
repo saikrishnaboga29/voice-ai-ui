@@ -75,8 +75,7 @@ function playAudio() {
 async function transcribe() {
     console.log("Entered into transcribe");
     if (selectedRecording) {
-        const loader = document.getElementById('loader');
-        loader.style.display = 'block';
+        document.getElementById('transcript').value = "Transcription in progress, please wait...";
         const formData = new FormData();
         formData.append('file', selectedRecording.blob);
 
@@ -105,7 +104,6 @@ async function transcribe() {
                 const transcriptionData = await transcriptionResponse.json();
 
                 if (transcriptionData.transcriptionText) {
-                    loader.style.display = 'none';
                     document.getElementById('transcript').value = transcriptionData.transcriptionText;
                 } else {
                     setTimeout(checkTranscription, 5000); // Check every 5 seconds
@@ -115,7 +113,7 @@ async function transcribe() {
             checkTranscription();
         } catch (error) {
             console.error('Error:', error);
-            loader.style.display = 'none';
+            document.getElementById('transcript').value = 'An error occurred during transcription.';
         }
     }
 }
