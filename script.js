@@ -133,7 +133,7 @@ function askQuestion() {
 
     appendMessage(question, 'user-message');
 
-    fetch('http://127.0.0.1:3000/ask', {
+    fetch('https://voidwalker.pythonanywhere.com/ask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
