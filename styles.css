@@ -1,0 +1,200 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: left;
+    color: #333;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fffdfd;
+}
+
+.header-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#delete-all {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #4b4949;
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 50%;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.sidebar input {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.sidebar #recordings-list {
+    margin: 10px;
+}
+
+.recording {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.main-content {
+    width: 50%;
+    padding-left: 20px;
+}
+
+#recording-details {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#recording-details, .transcription-ai-chat {
+    margin-bottom: 20px;
+}
+
+.recording-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#recording-details button, .chat-input button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.transcription-ai-chat {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#transcription textarea, .chat-input input {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#chat-window {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.user-message {
+    background-color: #000;
+    color: white;
+    align-self: flex-end;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #d3d3d3;
+    color: black;
+    align-self: flex-start;
+    width: fit-content;
+    margin-right: auto;
+}
+
+.chat-input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#response {
+    display: none;
+}
+
+#sendButton {
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+#waveform {
+    width: 100%;
+    height: 80px; /* Reduced height */
+    margin-top: 20px;
+    margin-bottom: 50px; /* Added margin-bottom to prevent overlap */
+}
+
+
+
+
+/* Existing CSS styles */
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

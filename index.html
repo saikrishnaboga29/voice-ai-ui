@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Notes AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Notes AI</h1>
+        <div class="header-buttons">
+            <button id="delete-all" onclick="deleteAllRecordings()">Delete All</button>
+            <button id="start-recording" onclick="startRecording()">Start Recording</button>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <input type="text" id="search" placeholder="Search recordings...">
+                <div id="recordings-list">
+                    <!-- Recordings will be listed here -->
+                </div>
+            </div>
+            <div class="main-content">
+                <div id="recording-details">
+                    <h3>Recording Details</h3>
+                    <div id="recording-info">
+                        <div id="waveform"></div>
+                    </div>
+                    <div class="recording-button-container">
+                        <button id="play-button" onclick="playAudio()">Play</button>
+                        <button id="transcribe-button" onclick="transcribe()">Transcribe</button>
+                    </div>
+                </div>
+                
+                <div class="transcription-ai-chat">
+                    <div id="transcription">
+                        <h3>Transcription</h3>
+                        <textarea id="transcript" rows="5" placeholder="Transcription will appear here..."></textarea>
+                    </div>
+                </div>
+                <div class="transcription-ai-chat">
+                    <div id="ai-chat">
+                        <h3>AI Chat</h3>
+                        <div id="chat-window">
+                            <!-- Chat messages will be appended here -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="question" placeholder="Type a message...">
+                            <button id="sendButton" onclick="askQuestion()">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="loader" style="display: none;">Loading...</div> <!-- Loader element -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
